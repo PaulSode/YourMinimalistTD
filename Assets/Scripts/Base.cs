@@ -78,7 +78,6 @@ public class Base : MonoBehaviour
 
         if (closestEnemy != null && closestDistance <= range)
         {
-            Debug.Log(closestDistance);
             return closestEnemy.transform;
         }
         else
@@ -99,7 +98,7 @@ public class Base : MonoBehaviour
         var bullet = Instantiate(bulletToSpawn);
         bullet.transform.position = spawnPoint.transform.position;
         bullet.transform.rotation = spawnPoint.transform.rotation;
-
+        bullet.gameObject.GetComponent<Bullet>().damage = this.damage;
     }
     
     private void OnCollisionEnter2D(Collision2D other)
@@ -109,6 +108,7 @@ public class Base : MonoBehaviour
             currentHp -= 10;
             EnemyManager.Instance.enemyList.Remove(other.gameObject);
             EnemyManager.Instance.enemyCount--;
+            
             Destroy(other.gameObject);
             
         }

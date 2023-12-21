@@ -91,7 +91,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -109,9 +109,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d3cf54f251a74b4cbb205c24bb06694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spd: 2
+  speed: 2
   lifepsan: 4
   velocity: {x: 0.35, y: 1.01}
+  damage: 1
 --- !u!1 &5239656858379914297
 GameObject:
   m_ObjectHideFlags: 0

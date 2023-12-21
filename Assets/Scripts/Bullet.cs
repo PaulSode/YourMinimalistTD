@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float speed = 2;
     [SerializeField] private float lifepsan = 4;
     [SerializeField] private Vector2 velocity;
+    public float damage = 1;
 
     private void Awake()
     {
@@ -27,14 +28,11 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.name.Contains("Enemy"))
         {
-            EnemyManager.Instance.enemyList.Remove(other.gameObject);
-            EnemyManager.Instance.enemyCount--;
-            Destroy(other.gameObject);
+            other.gameObject.GetComponent<Enemy>().RemoveHP(damage);
             Destroy(gameObject);
         }
     }
