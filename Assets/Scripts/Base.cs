@@ -100,12 +100,21 @@ public class Base : MonoBehaviour
         bullet.transform.rotation = spawnPoint.transform.rotation;
         bullet.gameObject.GetComponent<Bullet>().damage = this.damage;
     }
+
+    public void UpdateStats(float dmg, float spd, float rng)
+    {
+        damage = dmg;
+        attackSpeed = spd;
+        range = rng;
+        
+        rangeIndicator.transform.localScale = new Vector2(2*range, 2*range);
+    }
     
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.name.Contains("Enemy"))
         {
-            currentHp -= 10;
+            currentHp -= other.gameObject.GetComponent<Enemy>().GetDamage();
             EnemyManager.Instance.enemyList.Remove(other.gameObject);
             EnemyManager.Instance.enemyCount--;
             

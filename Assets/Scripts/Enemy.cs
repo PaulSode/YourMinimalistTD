@@ -40,7 +40,13 @@ public class Enemy : MonoBehaviour
         {
             EnemyManager.Instance.enemyList.Remove(gameObject);
             EnemyManager.Instance.enemyCount--;
+            RevenueManager.Instance.AddAmount(1);
             Destroy(gameObject);
         }
+    }
+
+    public float GetDamage()
+    {
+        return damage;
     }
 }

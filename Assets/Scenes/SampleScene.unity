@@ -123,6 +123,67 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &334779115
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3649270257906885299, guid: 28d69a8786c334d46b308c876f59d10a, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649270257906885299, guid: 28d69a8786c334d46b308c876f59d10a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649270257906885299, guid: 28d69a8786c334d46b308c876f59d10a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649270257906885299, guid: 28d69a8786c334d46b308c876f59d10a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649270257906885299, guid: 28d69a8786c334d46b308c876f59d10a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649270257906885299, guid: 28d69a8786c334d46b308c876f59d10a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649270257906885299, guid: 28d69a8786c334d46b308c876f59d10a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649270257906885299, guid: 28d69a8786c334d46b308c876f59d10a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649270257906885299, guid: 28d69a8786c334d46b308c876f59d10a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649270257906885299, guid: 28d69a8786c334d46b308c876f59d10a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649270257906885299, guid: 28d69a8786c334d46b308c876f59d10a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923615410691167679, guid: 28d69a8786c334d46b308c876f59d10a, type: 3}
+      propertyPath: m_Name
+      value: MoneyPanel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 28d69a8786c334d46b308c876f59d10a, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +244,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -215,6 +276,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &527346005 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3910322710555739278, guid: 606bcf72796a7b146b689970ce7931f7, type: 3}
+  m_PrefabInstance: {fileID: 842610815723272485}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18785273c2f8d94ab6bbea360ed8689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &810186442
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,6 +388,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3101304211243021485, guid: d2820e6aa1a2f0548b43a084e8e4a6cb, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 519420031}
+    - target: {fileID: 3101304211243021485, guid: d2820e6aa1a2f0548b43a084e8e4a6cb, type: 3}
+      propertyPath: theBase
+      value: 
+      objectReference: {fileID: 527346005}
     - target: {fileID: 9165384477781122620, guid: d2820e6aa1a2f0548b43a084e8e4a6cb, type: 3}
       propertyPath: m_Name
       value: UpgradePanel
@@ -333,14 +413,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3910322710555739278, guid: 606bcf72796a7b146b689970ce7931f7, type: 3}
-      propertyPath: range
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3910322710555739278, guid: 606bcf72796a7b146b689970ce7931f7, type: 3}
-      propertyPath: attackSpeed
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5624696945340508886, guid: 606bcf72796a7b146b689970ce7931f7, type: 3}
       propertyPath: m_Name
       value: Base

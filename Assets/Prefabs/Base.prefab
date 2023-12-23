@@ -321,7 +321,7 @@ Transform:
   - {fileID: 3646041446145103054}
   - {fileID: 8447355911068684835}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8341838425033651878
 SpriteRenderer:
@@ -391,8 +391,8 @@ MonoBehaviour:
   maxHp: 1000
   regenRate: 10
   damage: 1
-  attackSpeed: 3
-  range: 10
+  attackSpeed: 1
+  range: 5
   bulletToSpawn: {fileID: 1203156856923300319, guid: 3e77579afc8370a43b78f92fb439b8f0, type: 3}
   spawnPoint: {fileID: 3559617523939138494}
   rangeIndicator: {fileID: 1910848288131143589}

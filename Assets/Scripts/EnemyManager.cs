@@ -56,7 +56,7 @@ public class EnemyManager : MonoBehaviour
         for (int i = 0; i < enemyCount; i++)
         {
             GameObject enemy = Instantiate(enemyToSpawn);
-            enemy.gameObject.GetComponent<Enemy>().mHp = Math.Pow(1.1f, waveCount - 3);
+            enemy.gameObject.GetComponent<Enemy>().mHp = Math.Pow(1.3f, waveCount - 3);
             var vector2 = Random.insideUnitCircle.normalized * 10;
             enemy.transform.localPosition = new Vector2(vector2.x, vector2.y);
             enemyList.Add(enemy);
