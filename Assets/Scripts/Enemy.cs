@@ -6,8 +6,8 @@ using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private double hp;
-    public double mHp = 1;
+    public double hp;
+    public double mHp = 3;
 
     [SerializeField] private float damage = 1;
     [SerializeField] private float speed = 1;
@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
             EnemyManager.Instance.enemyList.Remove(gameObject);
             EnemyManager.Instance.enemyCount--;
             RevenueManager.Instance.AddAmount(1);
-            Destroy(gameObject);
+            Destroy(gameObject.transform.parent.gameObject);
         }
     }
 

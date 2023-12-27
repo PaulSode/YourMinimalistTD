@@ -1,10 +1,6 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using UnityEditor.Search;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class Base : MonoBehaviour
 {
@@ -22,20 +18,18 @@ public class Base : MonoBehaviour
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private GameObject rangeIndicator;
 
-    private float cd = 0;
+    private float cd = 1;
     private Transform _closest;
 
-    
 
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-       
     }
-    
+
     private void Start()
     {
-        rangeIndicator.transform.localScale = new Vector2(2*range, 2*range);
+        rangeIndicator.transform.localScale = new Vector2(2 * range, 2 * range);
     }
 
     void Update()
@@ -47,7 +41,7 @@ public class Base : MonoBehaviour
             {
                 Face(_closest);
                 ShootAt(_closest);
-                cd = 1/attackSpeed;
+                cd = 1 / attackSpeed;
             }
         }
 
@@ -61,14 +55,14 @@ public class Base : MonoBehaviour
 
     private Transform FindClosestEnemy()
     {
-        
         List<GameObject> enemies = EnemyManager.Instance.enemyList;
         GameObject closestEnemy = null;
         float closestDistance = Mathf.Infinity;
- 
-        foreach (GameObject enemy in enemies) {
+
+        foreach (GameObject enemy in enemies)
+        {
             float distance = Vector2.Distance(this.transform.localPosition, enemy.transform.position);
- 
+
             if (distance < closestDistance)
             {
                 closestEnemy = enemy;
@@ -94,7 +88,6 @@ public class Base : MonoBehaviour
 
     private void ShootAt(Transform target)
     {
-
         var bullet = Instantiate(bulletToSpawn);
         bullet.transform.position = spawnPoint.transform.position;
         bullet.transform.rotation = spawnPoint.transform.rotation;
@@ -106,19 +99,22 @@ public class Base : MonoBehaviour
         damage = dmg;
         attackSpeed = spd;
         range = rng;
-        
-        rangeIndicator.transform.localScale = new Vector2(2*range, 2*range);
+
+        rangeIndicator.transform.localScale = new Vector2(2 * range, 2 * range);
     }
-    
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.name.Contains("Enemy"))
         {
-            currentHp -= other.gameObject.GetComponent<Enemy>().GetDamage();
+            currentHp -= other.gameObject.GetComponentInChildren<Enemy>().GetDamage();
             EnemyManager.Instance.enemyList.Remove(other.gameObject);
             EnemyManager.Instance.enemyCount--;
-            
-            Destroy(other.gameObject);
+            Destroy(other.transform.parent);
+            if (currentHp <= 0)
+            {
+                SceneManager.LoadScene("UpgradeScene");
+            }
             
         }
     }
