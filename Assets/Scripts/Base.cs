@@ -110,7 +110,7 @@ public class Base : MonoBehaviour
             currentHp -= other.gameObject.GetComponentInChildren<Enemy>().GetDamage();
             EnemyManager.Instance.enemyList.Remove(other.gameObject);
             EnemyManager.Instance.enemyCount--;
-            Destroy(other.transform.parent);
+            Destroy(other.transform.parent.gameObject);
             if (currentHp <= 0)
             {
                 SceneManager.LoadScene("UpgradeScene");
