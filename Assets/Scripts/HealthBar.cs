@@ -41,11 +41,8 @@ public class HealthBar : MonoBehaviour {
     }
     
     private void StayUp() {
-        var camXform = mainCamera.transform;
-        var forward = transform.position - camXform.position;
-        forward.Normalize();
-        var up = Vector3.Cross(forward, camXform.right);
-        transform.rotation = Quaternion.LookRotation(forward, up);
+
+        transform.localPosition = new Vector2(damageable.transform.localPosition.x, damageable.transform.localPosition.y + 1);
     }
 
 }

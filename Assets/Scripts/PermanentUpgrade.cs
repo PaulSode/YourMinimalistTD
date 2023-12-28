@@ -6,6 +6,7 @@ public class PermanentUpgrade : MonoBehaviour
 {
     public static PermanentUpgrade Instance = null;
     public int permanentMoney;
+    public int maxWave;
 
     private void Awake()
     {
@@ -21,10 +22,12 @@ public class PermanentUpgrade : MonoBehaviour
 
         DontDestroyOnLoad(this);
         permanentMoney = 0;
+        maxWave = 0;
     }
 
-    public void AddPermanentMoeny(int money)
+    public void AddPermanentMoney(int money)
     {
         permanentMoney += money;
+        if (maxWave < money) maxWave = money;
     }
 }

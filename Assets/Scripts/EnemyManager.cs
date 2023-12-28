@@ -70,7 +70,7 @@ public class EnemyManager : MonoBehaviour
 
     public void EndGame()
     {
-        PermanentUpgrade.Instance.AddPermanentMoeny(waveCount);
+        PermanentUpgrade.Instance.AddPermanentMoney(waveCount);
         SceneManager.LoadScene("UpgradeScene");
     }
 }

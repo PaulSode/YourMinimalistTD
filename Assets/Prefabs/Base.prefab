@@ -302,9 +302,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18785273c2f8d94ab6bbea360ed8689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyManager: {fileID: 0}
-  currentHp: 30
-  maxHp: 30
+  currentHp: 5
+  maxHp: 5
   regenRate: 0
   damage: 1
   attackSpeed: 1
