@@ -113,7 +113,7 @@ public class Base : MonoBehaviour
             Destroy(other.transform.parent.gameObject);
             if (currentHp <= 0)
             {
-                SceneManager.LoadScene("UpgradeScene");
+                EnemyManager.Instance.EndGame();
             }
             
         }

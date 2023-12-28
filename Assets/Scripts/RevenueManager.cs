@@ -21,8 +21,6 @@ public class RevenueManager : MonoBehaviour
         {
             Instance = this;
         }
-        DontDestroyOnLoad(this);
-        
     }
 
     public void AddAmount(int amount)

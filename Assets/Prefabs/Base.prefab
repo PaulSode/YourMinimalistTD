@@ -236,7 +236,7 @@ Transform:
   - {fileID: 9006016789819665354}
   - {fileID: 8447355911068684835}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8341838425033651878
 SpriteRenderer:
@@ -302,9 +302,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18785273c2f8d94ab6bbea360ed8689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHp: 100
-  maxHp: 100
-  regenRate: 10
+  enemyManager: {fileID: 0}
+  currentHp: 30
+  maxHp: 30
+  regenRate: 0
   damage: 1
   attackSpeed: 1
   range: 5

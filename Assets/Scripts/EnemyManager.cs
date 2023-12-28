@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class EnemyManager : MonoBehaviour
@@ -28,7 +29,6 @@ public class EnemyManager : MonoBehaviour
         {
             Instance = this;
         }
-        DontDestroyOnLoad(this);
         enemyList = new List<GameObject>();
         enemyCount = 0;
         waveCount = 1;
@@ -66,5 +66,11 @@ public class EnemyManager : MonoBehaviour
 
         waveCount++;
         waveStarted = true;
+    }
+
+    public void EndGame()
+    {
+        PermanentUpgrade.Instance.AddPermanentMoeny(waveCount);
+        SceneManager.LoadScene("UpgradeScene");
     }
 }

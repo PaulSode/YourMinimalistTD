@@ -7,7 +7,7 @@ using UnityEngine;
 public class UpgradePanel : MonoBehaviour
 {
     [SerializeField] private Base theBase;
-    [SerializeField] private Camera camera;
+    [SerializeField] private new Camera camera;
 
     [SerializeField] private bool toggled = false;
     [SerializeField] private GameObject upgradesListGameObject;
@@ -68,6 +68,8 @@ public class UpgradePanel : MonoBehaviour
         toggled = !toggled;
         upgradesListGameObject.gameObject.SetActive(toggled);
     }
+
+    #region Add Functions
     
     public void AddDamage()
     {
@@ -140,6 +142,6 @@ public class UpgradePanel : MonoBehaviour
         }
     }
     
-    
+    #endregion
     
 }

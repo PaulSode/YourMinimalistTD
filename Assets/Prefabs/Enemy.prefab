@@ -196,6 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 0
   mHp: 3
+  explosion: {fileID: 3130365030686072271, guid: 0e10c8cae0e03c542b49611fb175a8eb, type: 3}
   damage: 1
   speed: 1
 --- !u!1 &6429037719250146788

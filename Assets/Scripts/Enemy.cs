@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public double hp;
     public double mHp = 3;
 
+    [SerializeField] private GameObject explosion;
     [SerializeField] private float damage = 1;
     [SerializeField] private float speed = 1;
     private Vector2 objective = Vector2.zero;
@@ -38,6 +39,7 @@ public class Enemy : MonoBehaviour
         hp -= amount;
         if (hp <= 0)
         {
+            Instantiate(explosion, transform.position, Quaternion.identity);
             EnemyManager.Instance.enemyList.Remove(gameObject);
             EnemyManager.Instance.enemyCount--;
             RevenueManager.Instance.AddAmount(1);

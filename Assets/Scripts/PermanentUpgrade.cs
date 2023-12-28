@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class PermanentUpgrade : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static PermanentUpgrade Instance = null;
+    public int permanentMoney;
+
+    private void Awake()
     {
-        
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        else
+        {
+            Instance = this;
+        }
+
+        DontDestroyOnLoad(this);
+        permanentMoney = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddPermanentMoeny(int money)
     {
-        
+        permanentMoney += money;
     }
 }
