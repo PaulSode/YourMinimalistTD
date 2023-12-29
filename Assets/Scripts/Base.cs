@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class Base : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
+    private AudioSource _shootSound;
 
     [SerializeField] private float currentHp = 100;
     [SerializeField] private float maxHp = 100;
@@ -25,6 +26,7 @@ public class Base : MonoBehaviour
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _shootSound = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -92,6 +94,7 @@ public class Base : MonoBehaviour
         bullet.transform.position = spawnPoint.transform.position;
         bullet.transform.rotation = spawnPoint.transform.rotation;
         bullet.gameObject.GetComponent<Bullet>().damage = this.damage;
+        _shootSound.Play();
     }
 
     public void UpdateStats(float dmg, float spd, float rng)
