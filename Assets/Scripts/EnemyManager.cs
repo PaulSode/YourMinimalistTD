@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-
+using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,6 +17,7 @@ public class EnemyManager : MonoBehaviour
     
     public int waveCount;
     public bool waveStarted;
+    [SerializeField] private TMP_Text waveText;
     
     private void Awake()
     {
@@ -50,6 +51,7 @@ public class EnemyManager : MonoBehaviour
 
     private IEnumerator StartWave()
     {
+        UpdateUI();
         waveStarted = false;
         
         enemyCount = waveCount * 3;
@@ -66,6 +68,11 @@ public class EnemyManager : MonoBehaviour
 
         waveCount++;
         waveStarted = true;
+    }
+    
+    private void UpdateUI()
+    {
+        waveText.text = waveCount + "";
     }
 
     public void EndGame()

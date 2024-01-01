@@ -1,16 +1,27 @@
 using System.Collections.Generic;
+using System.Net.Mime;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Base : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
     private AudioSource _shootSound;
+    
+    
+    [Header("Health")]
+    [SerializeField] private Image healthBar;
+    [SerializeField] private TMP_Text currentHealthText;
+    [SerializeField] private TMP_Text maxHealthText;
+    
 
     [SerializeField] private float currentHp = 100;
     [SerializeField] private float maxHp = 100;
     [SerializeField] private float regenRate = 1;
 
+    [Header("Attack")]
     [SerializeField] private float damage = 1;
     [SerializeField] private float attackSpeed = 1;
     [SerializeField] private float range = 5;
@@ -118,7 +129,15 @@ public class Base : MonoBehaviour
             {
                 EnemyManager.Instance.EndGame();
             }
-            
+
+            UpdateHealthUI();
         }
+    }
+
+    public void UpdateHealthUI()
+    {
+        healthBar.transform.localScale = new Vector3(currentHp / maxHp, 1, 1);
+        currentHealthText.text = currentHp + "";
+        maxHealthText.text = maxHp + "";
     }
 }
