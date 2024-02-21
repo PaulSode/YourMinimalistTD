@@ -2470,7 +2470,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3101304211243021485}
         m_TargetAssemblyTypeName: UpgradePanel, Assembly-CSharp
-        m_MethodName: AddRevenue
+        m_MethodName: AddRegen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2792,8 +2792,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -225.00012}
-  m_SizeDelta: {x: 0, y: 450.00027}
+  m_AnchoredPosition: {x: 0, y: 226.09048}
+  m_SizeDelta: {x: 0, y: 452.181}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4241284474007450006
 MonoBehaviour:
@@ -3347,7 +3347,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3101304211243021485}
         m_TargetAssemblyTypeName: UpgradePanel, Assembly-CSharp
-        m_MethodName: AddRevenue
+        m_MethodName: AddHealth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5274,8 +5274,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5087870083901030138}
   m_HandleRect: {fileID: 3097213144636451433}
   m_Direction: 2
-  m_Value: 0.9999999
-  m_Size: 0.66666657
+  m_Value: 0.00000020246915
+  m_Size: 0.6655913
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8263,26 +8263,41 @@ MonoBehaviour:
   camera: {fileID: 0}
   toggled: 0
   upgradesListGameObject: {fileID: 243536056027902746}
-  _nbDamageUp: 0
-  _nbSpeedUp: 0
-  _nbRangeUp: 0
-  _nbRevenueUp: 0
+  nbDamageUp: 0
+  nbSpeedUp: 0
+  nbRangeUp: 0
+  nbRevenueUp: 0
+  nbHealthUp: 0
+  nbRegenUp: 0
+  nbReductionUp: 0
   damageValue: 1
   speedValue: 1
   rangeValue: 5
   revenueValue: 2
+  healthValue: 5
+  regenValue: 0
+  reductionValue: 0
   damageValueText: {fileID: 6030448499551240298}
   speedValueText: {fileID: 4082829701036576233}
   rangeValueText: {fileID: 7099706388385614058}
   revenueValueText: {fileID: 9066999823943748819}
+  healthValueText: {fileID: 6832387373653691747}
+  regenValueText: {fileID: 1304835350675947624}
+  reductionValueText: {fileID: 5297360266022146736}
   damagePrice: 5
   speedPrice: 5
   rangePrice: 10
   revenuePrice: 10
+  healthPrice: 10
+  regenPrice: 15
+  reductionPrice: 30
   damagePriceText: {fileID: 5292287745744605393}
   speedPriceText: {fileID: 5350982321008133559}
   rangePriceText: {fileID: 6928071767043164495}
   revenuePriceText: {fileID: 3940048430811142918}
+  healthPriceText: {fileID: 2800711364845104410}
+  regenPriceText: {fileID: 1247943370930563493}
+  reductionPriceText: {fileID: 2114871973927964347}
 --- !u!114 &1264188934246013666
 MonoBehaviour:
   m_ObjectHideFlags: 0

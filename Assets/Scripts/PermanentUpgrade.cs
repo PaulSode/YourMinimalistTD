@@ -7,6 +7,8 @@ public class PermanentUpgrade : MonoBehaviour
     public static PermanentUpgrade Instance = null;
     public int permanentMoney;
     public int maxWave;
+    public bool unlockedHealth;
+    public bool unlockedModifiers;
 
     private void Awake()
     {
@@ -23,6 +25,8 @@ public class PermanentUpgrade : MonoBehaviour
         DontDestroyOnLoad(this);
         permanentMoney = 0;
         maxWave = 0;
+        unlockedHealth = false;
+        unlockedModifiers = false;
     }
 
     public void AddPermanentMoney(int money)

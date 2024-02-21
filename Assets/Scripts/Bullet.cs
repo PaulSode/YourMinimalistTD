@@ -10,11 +10,17 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float speed = 2;
     [SerializeField] private float lifepsan = 4;
     [SerializeField] private Vector2 velocity;
+    
+    
     public float damage = 1;
+
+    [SerializeField] private List<GameObject> piercedEnemies;
+    public int pierce = 1;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        piercedEnemies = new List<GameObject>();
     }
     
     void Update()
@@ -31,10 +37,15 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name.Contains("Enemy"))
+        if (other.gameObject.name.Contains("Enemy") && !piercedEnemies.Contains(other.gameObject))
         {
             other.gameObject.GetComponent<Enemy>().RemoveHP(damage);
-            Destroy(gameObject);
+            pierce -= 1;
+            if (pierce == 0)
+            {
+                Destroy(gameObject);    
+            }
+            piercedEnemies.Add(other.gameObject);
         }
     }
 }

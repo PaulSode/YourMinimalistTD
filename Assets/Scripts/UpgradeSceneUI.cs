@@ -21,4 +21,22 @@ public class UpgradeSceneUI : MonoBehaviour
     {
         SceneManager.LoadScene("GameScene");
     }
+
+    public void UnlockHealth()
+    {
+        if (PermanentUpgrade.Instance.permanentMoney >= 10)
+        {
+            PermanentUpgrade.Instance.permanentMoney -= 10;
+            PermanentUpgrade.Instance.unlockedHealth = true;
+        }
+    }
+
+    public void UnlockModifiers()
+    {
+        if (PermanentUpgrade.Instance.permanentMoney >= 50)
+        {
+            PermanentUpgrade.Instance.permanentMoney -= 50;
+            PermanentUpgrade.Instance.unlockedModifiers = true;
+        }
+    }
 }
